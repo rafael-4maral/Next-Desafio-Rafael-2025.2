@@ -5,7 +5,7 @@ const prisma = new PrismaClient();
 async function main() {
   const products = [
     {
-      title: 'Wireless Mouse',
+      title: 'Harry Potter and the Sorcerer\'s Stone',
       description: 'A smooth and responsive wireless mouse.',
       price: 29.99,
       createdAt: new Date(),
@@ -68,7 +68,7 @@ async function main() {
 
   for (const product of products) {
     await prisma.product.create({
-      data: product,
+      data: product as any,
     });
   }
 }
